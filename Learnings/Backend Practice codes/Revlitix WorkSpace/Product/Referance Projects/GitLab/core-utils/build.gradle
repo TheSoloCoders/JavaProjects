@@ -1,0 +1,168 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.0.1'
+    id 'io.spring.dependency-management' version '1.1.0'
+    // to publish the package
+    id 'maven-publish'
+}
+
+group = 'com.revlitix'
+version = '1.3.' + System.getenv("CI_PIPELINE_IID")
+sourceCompatibility = '17'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    set('springCloudVersion', "2022.0.0")
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    implementation 'io.micrometer:micrometer-tracing-bridge-brave'
+    implementation 'io.micrometer:micrometer-observation'
+
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    runtimeOnly 'io.micrometer:micrometer-registry-prometheus'
+
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+
+build {
+    dependsOn 'makeBuildInfo'
+}
+
+
+// This will create or update the file build info file which contains the build info.
+task makeBuildInfo() {
+
+    //your instrumentation task steps here
+    String filePath = projectDir.path + '/src/main/resources/package-buildInfo.json'
+
+    File f = new File(filePath)
+
+    // create the file if not exists...
+    if (!f.exists()) {
+        f.createNewFile()
+    }
+
+    /**
+     * to set the build info json
+     */
+    String buildInfoJsonText
+    /**
+     * starting the json string
+     */
+    buildInfoJsonText = '{\n'
+
+    /**
+     * adding name of the project
+     */
+    buildInfoJsonText += '"name":"' + project.name + '",\n'
+    /**
+     *   adding group of the project
+     */
+    buildInfoJsonText += '"group":"' + project.group + '",\n'
+
+    // which gradle major.version it being used to build
+    buildInfoJsonText += '"gradleVersion":"' + project.gradle.gradleVersion + '",\n'
+
+    /**
+     *  adding current project major.version
+     */
+    buildInfoJsonText += '"version":"' + project.version + '",\n'
+    // for the current ID
+    buildInfoJsonText += '"ciPipelineIID":"' + System.getenv("CI_PIPELINE_IID") + '",\n'
+    // for global id
+    buildInfoJsonText += '"ciPipelineID":"' + System.getenv("CI_PIPELINE_ID") + '",\n'
+    // from which branch
+    buildInfoJsonText += '"branchName":"' + System.getenv("CI_COMMIT_BRANCH") + '",\n'
+    // commit SHA
+    buildInfoJsonText += '"commitSha":"' + System.getenv("CI_COMMIT_SHA") + '",\n'
+    // when the commit happens
+    buildInfoJsonText += '"commitTimestamp":"' + System.getenv("CI_COMMIT_TIMESTAMP") + '",\n'
+    // commit by user
+    buildInfoJsonText += '"commitAuthor":"' + System.getenv("CI_COMMIT_AUTHOR") + '",\n'
+    // commit title
+    buildInfoJsonText += '"commitTitle":"' + System.getenv("CI_COMMIT_TITLE") + '",\n'
+
+    /**
+     * adding java version
+     */
+    buildInfoJsonText += '"javaVersion":"' + sourceCompatibility + '",\n'
+
+    /**
+     * adding build time
+     */
+    buildInfoJsonText += '"buildTime":"' + new Date().format("yyyy-MM-dd'T'HH:mm:ss'Z'", TimeZone.getTimeZone("UTC")) + '"\n'
+
+
+    // closing the json string
+    buildInfoJsonText += '}'
+
+    println "\n*********** Build Info Start *********** \n"
+    // printing the build
+    println buildInfoJsonText
+
+    println "\n*********** Build Info End *********** \n"
+
+    // writing to the file
+    f.text = buildInfoJsonText
+}
+
+// to publish the jar
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            /// artifactId = 'my-library'
+            from components.java
+            versionMapping {
+                usage('java-api') {
+                    fromResolutionOf('runtimeClasspath')
+                }
+                usage('java-runtime') {
+                    fromResolutionResult()
+                }
+            }
+        }
+    }
+    repositories {
+        maven {
+            // url "${CI_API_V4_URL}/groups/56204136/-/packages/maven"
+            url "https://gitlab.ops.revlitix.com/api/v4/projects/3/packages/maven"
+            name "gitlab-maven"
+            credentials(HttpHeaderCredentials) {
+                name = "Job-Token"
+                value = System.getenv("CI_JOB_TOKEN")
+            }
+            authentication {
+                header(HttpHeaderAuthentication)
+            }
+        }
+    }
+}

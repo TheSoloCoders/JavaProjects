@@ -1,0 +1,22 @@
+
+]	java:S125"<This block of commented-out lines of code should be removed.(Õ£üŞøÿÿÿÿ8¯Éƒúö0
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(ä¦†¬øÿÿÿÿ8°Éƒúö0
+U	java:S106 "9Replace this use of System.out or System.err by a logger.(±‹ş8²Éƒúö0
+Z	java:S106#"9Replace this use of System.out or System.err by a logger.(´îöÃşÿÿÿÿ8²Éƒúö0
+l
+java:S1128"ORemove this unused import 'org.springframework.beans.factory.annotation.Value'.(ìø›8ƒ–„úö0
+v
+java:S1128"TRemove this unused import 'org.springframework.boot.web.client.RestTemplateBuilder'.(—«ñûÿÿÿÿ8ü»Œúö0
+e
+java:S1128"HRemove this unused import 'org.springframework.context.annotation.Bean'.(‚î‰Ş8ü»Œúö0
+h
+java:S1128"KRemove this unused import 'org.springframework.context.annotation.Primary'.(“ğ›ß8ƒ–„úö0
+€
+java:S1128	"^Remove this unused import 'org.springframework.http.client.BufferingClientHttpRequestFactory'.(éÀûÓúÿÿÿÿ8„–„úö0
+}
+java:S1128
+"[Remove this unused import 'org.springframework.http.client.SimpleClientHttpRequestFactory'.(å€ªöøÿÿÿÿ8„–„úö0
+Š
+java:S1128"hRemove this unused import 'org.springframework.http.converter.json.MappingJackson2HttpMessageConverter'.(ìÒœ‹øÿÿÿÿ8„–„úö0
+Q
+java:S1128"/Remove this unused import 'java.time.Duration'.(ëá¯‰üÿÿÿÿ8„–„úö0

@@ -1,0 +1,46 @@
+
+T	java:S106"9Replace this use of System.out or System.err by a logger.(âÅ„88ÏÂÎıù0
+X	java:S125"<This block of commented-out lines of code should be removed.(Õ î¹8ÏÂÎıù0
+W	java:S125"<This block of commented-out lines of code should be removed.(™È†8ÏÂÎıù0
+Z	java:S106&"9Replace this use of System.out or System.err by a logger.(çÁ¨âúÿÿÿÿ8ÑÂÎıù0
+U	java:S106)"9Replace this use of System.out or System.err by a logger.(µˆœÑ8ÑÂÎıù0
+]	java:S125+"<This block of commented-out lines of code should be removed.(úûÈùÿÿÿÿ8çÏıù0
+]	java:S125-"<This block of commented-out lines of code should be removed.(¦Ô¶‹ıÿÿÿÿ8çÏıù0
+X	java:S125?"<This block of commented-out lines of code should be removed.(øò©×8ÓÂÎıù0
+]	java:S125D"<This block of commented-out lines of code should be removed.(†’†³ıÿÿÿÿ8ÓÂÎıù0
+X	java:S125F"<This block of commented-out lines of code should be removed.(¶Ë¤Ö8ÓÂÎıù0
+X	java:S125H"<This block of commented-out lines of code should be removed.(ŸÛıÒ8ÓÂÎıù0
+X	java:S125J"<This block of commented-out lines of code should be removed.(È¥‰8ÓÂÎıù0
+]	java:S125Y"<This block of commented-out lines of code should be removed.(ÃÈãÒùÿÿÿÿ8ÓÂÎıù0
+X	java:S125["<This block of commented-out lines of code should be removed.(ää±š8ÓÂÎıù0
+X	java:S125^"<This block of commented-out lines of code should be removed.(¤×Ñ8ÓÂÎıù0
+X	java:S125d"<This block of commented-out lines of code should be removed.(ËÓÓ«8ÓÂÎıù0
+]	java:S125i"<This block of commented-out lines of code should be removed.(õà“âüÿÿÿÿ8ÓÂÎıù0
+X	java:S125m"<This block of commented-out lines of code should be removed.(Ê•­ô8ÓÂÎıù0
+]	java:S125p"<This block of commented-out lines of code should be removed.(àµóüÿÿÿÿ8ÓÂÎıù0
+X	java:S125r"<This block of commented-out lines of code should be removed.(¬®øü8ÓÂÎıù0
+]	java:S125{"<This block of commented-out lines of code should be removed.(Š¾Äûÿÿÿÿ8ÓÂÎıù0
+Y	java:S125€"<This block of commented-out lines of code should be removed.(ï„­à8ÓÂÎıù0
+^	java:S125Œ"<This block of commented-out lines of code should be removed.(Å”Ô¸üÿÿÿÿ8ÓÂÎıù0
+^	java:S125"<This block of commented-out lines of code should be removed.(é¶õÅùÿÿÿÿ8ÓÂÎıù0
+^	java:S125—"<This block of commented-out lines of code should be removed.(’Å©ğüÿÿÿÿ8ÓÂÎıù0
+^	java:S125¥"<This block of commented-out lines of code should be removed.(ßÒ­Çüÿÿÿÿ8ÓÂÎıù0
+Y	java:S125©"<This block of commented-out lines of code should be removed.(•·Ï„8ÓÂÎıù0
+Y	java:S125¯"<This block of commented-out lines of code should be removed.(•·Ï„8ÔÂÎıù0
+^	java:S125»"<This block of commented-out lines of code should be removed.(÷¦†èıÿÿÿÿ8ÔÂÎıù0
+Y	java:S125Ó"<This block of commented-out lines of code should be removed.(Â·Êç8ÔÂÎıù0
+Y	java:S125İ"<This block of commented-out lines of code should be removed.(ÃŞÆ†8ÔÂÎıù0
+^	java:S125ì"<This block of commented-out lines of code should be removed.(½ë€âıÿÿÿÿ8ÔÂÎıù0
+Y	java:S125ğ"<This block of commented-out lines of code should be removed.(Ó·‰Í8ÔÂÎıù0
+Y	java:S125"<This block of commented-out lines of code should be removed.(³Ëê8ÔÂÎıù0
+^	java:S125™"<This block of commented-out lines of code should be removed.(˜÷Òøÿÿÿÿ8ÔÂÎıù0
+i
+java:S1128"GRemove this unused import 'org.springframework.boot.SpringApplication'.(¯ìÙÿÿÿÿÿ8ÔÂÎıù0
+v
+java:S1128"YRemove this unused import 'org.springframework.boot.autoconfigure.SpringBootApplication'.(Ë”ÖÏ8ÔÂÎıù0
+s
+java:S1128"QRemove this unused import 'org.springframework.context.annotation.ComponentScan'.(æëòÒûÿÿÿÿ8ÕÂÎıù0
+o
+java:S1128"RRemove this unused import 'org.springframework.context.annotation.ComponentScans'.(è¦ù8ÕÂÎıù0
+Q
+java:S1128"/Remove this unused import 'java.time.Duration'.(ëá¯‰üÿÿÿÿ8ÕÂÎıù0

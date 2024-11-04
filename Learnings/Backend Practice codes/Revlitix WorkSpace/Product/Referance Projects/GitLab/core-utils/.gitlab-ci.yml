@@ -1,0 +1,3 @@
+include:
+  - project: $PACKAGE_BUILD_PIPELINE_REPO
+    file: build.yml

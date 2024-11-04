@@ -1,0 +1,10 @@
+
+N	java:S106"9Replace this use of System.out or System.err by a logger.(¨Üšß
+[
+java:S1612"@Replace this lambda with method reference 'System.out::println'.(÷„ô´şÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(÷„ô´şÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(™ÜÇüøÿÿÿÿ
+N	java:S106*"9Replace this use of System.out or System.err by a logger.(€€ï
+N	java:S1061"9Replace this use of System.out or System.err by a logger.(€Ç…µ
+n
+java:S1128"SRemove this unused import 'org.springframework.beans.factory.annotation.Autowired'.(¡¸Îùÿÿÿÿ
